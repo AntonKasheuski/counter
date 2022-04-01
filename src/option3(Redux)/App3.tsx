@@ -12,34 +12,6 @@ function App3() {
     const maxValue = useSelector<RootStateType, number>(state => state.app.maxValue)
     const value = useSelector<RootStateType, number>(state => state.app.value)
 
-    /*const [maxValue, setMaxValue] = useState<number>(5)
-    const [startValue, setStartValue] = useState<number>(0)
-    const [maxValueInput, setMaxValueInput] = useState<number>(5)
-    const [startValueInput, setStartValueInput] = useState<number>(0)
-    const [value, setValue] = useState<number>(0)
-    const [settingMode, setSettingMode] = useState<boolean>(false)*/
-    /*useEffect( () => {
-        let maxValueAsString = localStorage.getItem("maxCounterValue")
-        if (maxValueAsString) {
-            setMaxValue(JSON.parse(maxValueAsString))
-            setMaxValueInput(JSON.parse(maxValueAsString))
-        }
-    }, [])
-    useEffect( () => {
-        let startValueAsString = localStorage.getItem("startCounterValue")
-        if (startValueAsString) {
-            setStartValue(JSON.parse(startValueAsString))
-            setStartValueInput(JSON.parse(startValueAsString))
-            setValue(JSON.parse(startValueAsString))
-        }
-    }, [])
-    useEffect( () => {
-        localStorage.setItem("maxCounterValue", JSON.stringify(maxValue))
-    }, [maxValue])
-    useEffect( () => {
-        localStorage.setItem("startCounterValue", JSON.stringify(startValue))
-    }, [startValue])*/
-
     const onChangeMaxValueInputHandler = (newValue: number) => {
         dispatch(setMaxValueAC(newValue))
         dispatch(toggleSettingModeAC(true))

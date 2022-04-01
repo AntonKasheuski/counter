@@ -1,12 +1,3 @@
-type AppStateType = {
-    maxValue: number
-    startValue: number
-    maxValueInput: number
-    startValueInput: number
-    value: number
-    settingMode: boolean
-}
-
 const initialState = {
     maxValue: 5,
     startValue: 0,
@@ -16,7 +7,9 @@ const initialState = {
     settingMode: false
 }
 
-export const appReducer = (state: AppStateType = initialState, action: ActionType) => {
+type InitialStateType = typeof initialState
+
+export const appReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case "SET-VALUE":
             return {...state, value: action.value}
