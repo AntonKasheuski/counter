@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./App.module.css";
-import Input from "./Input";
-import Button from "./Button";
+import Input from "../Input";
+import Button from "../Button";
 
 type SetterPropsType ={
     maxValueInput: number

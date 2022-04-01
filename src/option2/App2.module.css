@@ -1,0 +1,157 @@
+.App {
+    width: available;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    font-family: "Trebuchet MS";
+}
+
+/*--------------*/
+
+.SetterBody {
+    background-color: #333333;
+    border: 2px solid deepskyblue;
+    border-radius: 20px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.InputsBlock {
+    background-color: #818181;
+    border: 2px solid deepskyblue;
+    border-radius: 20px;
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.MaxValueBlock {
+    width: 95%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.StartValueBlock {
+    width: 95%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.Input {
+    border: 2px solid deepskyblue;
+    border-radius: 5px;
+    height: 40px;
+    width: 190px;
+    font-size: 20px;
+}
+
+
+.RedInput {
+    border: 2px solid red;
+    border-radius: 5px;
+    height: 40px;
+    width: 190px;
+    font-size: 20px;
+    outline: none;
+    background-color: #ff8d8d;
+}
+
+.SetButtonBlock {
+    background-color: #818181;
+    border: 2px solid deepskyblue;
+    border-radius: 20px;
+    width: 90%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*--------------*/
+
+.CounterBody {
+    background-color: #333333;
+    border: 2px solid deepskyblue;
+    border-radius: 20px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Display {
+    background-color: #acdaff;
+    border: 2px solid deepskyblue;
+    border-radius: 20px;
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Message {
+    height: 50px;
+    font-size: 31px;
+}
+
+.RedMessage {
+    height: 50px;
+    font-size: 50px;
+    color: red;
+}
+
+.Answer {
+    font-size: 100px;
+}
+
+.RedAnswer {
+    font-size: 125px;
+    color: red;
+}
+
+.ButtonsBlock {
+    background-color: #818181;
+    border: 2px solid deepskyblue;
+    border-radius: 20px;
+    width: 90%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*--------------*/
+
+.Button {
+    width: fit-content;
+    height: 60px;
+    padding: 0 30px 0 30px;
+    border-radius: 15px;
+    background-color: deepskyblue;
+    font-size: 50px;
+}
+
+.Span {
+    color: deepskyblue;
+    font-size: 40px
+}

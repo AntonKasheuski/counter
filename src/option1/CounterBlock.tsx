@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./App.module.css";
-import Button from "./Button";
+import Button from "../Button";
 
 type CounterPropsType = {
     settingMode: boolean

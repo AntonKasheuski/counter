@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import s from './App.module.css';
-import SetterBlock from "./SetterBlock";
-import CounterBlock from "./CounterBlock";
+import s from './App2.module.css';
+import SetterBlock2 from "./SetterBlock2";
+import CounterBlock2 from "./CounterBlock2";
 
 function App2() {
     const [maxValue, setMaxValue] = useState<number>(5)
@@ -11,14 +11,14 @@ function App2() {
     const [value, setValue] = useState<number>(0)
     const [settingMode, setSettingMode] = useState<boolean>(false)
 
-    useEffect( () => {
+    useEffect(() => {
         let maxValueAsString = localStorage.getItem("maxCounterValue")
         if (maxValueAsString) {
             setMaxValue(JSON.parse(maxValueAsString))
             setMaxValueInput(JSON.parse(maxValueAsString))
         }
     }, [])
-    useEffect( () => {
+    useEffect(() => {
         let startValueAsString = localStorage.getItem("startCounterValue")
         if (startValueAsString) {
             setStartValue(JSON.parse(startValueAsString))
@@ -26,20 +26,18 @@ function App2() {
             setValue(JSON.parse(startValueAsString))
         }
     }, [])
-    useEffect( () => {
+    useEffect(() => {
         localStorage.setItem("maxCounterValue", JSON.stringify(maxValue))
     }, [maxValue])
-    useEffect( () => {
+    useEffect(() => {
         localStorage.setItem("startCounterValue", JSON.stringify(startValue))
     }, [startValue])
 
     const onChangeMaxValueInputHandler = (newValue: number) => {
         setMaxValueInput(newValue)
-        setSettingMode(true)
     }
     const onChangeStartValueInputHandler = (newValue: number) => {
         setStartValueInput(newValue)
-        setSettingMode(true)
     }
     const onSetClickHandler = () => {
         setMaxValue(maxValueInput)
@@ -53,37 +51,39 @@ function App2() {
     const onResClickHandler = () => {
         setValue(startValue)
     }
+    const onSettingModeClickHandler = () => {
+        setSettingMode(true)
+    }
 
-    let messageForUser: string = "enter values and press 'set'";
-    let disableSetButtonOnSettingModeON: boolean;
+    let messageForUser: string = "enter values and press 'set':";
+    let errorMessage: boolean;
     if (startValueInput < 0 || maxValueInput <= startValueInput) {
         messageForUser = "incorrect value!";
-        disableSetButtonOnSettingModeON = true;
+        errorMessage = true;
     } else {
-        disableSetButtonOnSettingModeON = false;
+        errorMessage = false;
     }
 
     return (
         <div className={s.App}>
-            <SetterBlock
-                maxValueInput={maxValueInput}
-                startValueInput={startValueInput}
-                onChangeMaxValueInputHandler={onChangeMaxValueInputHandler}
-                onChangeStartValueInputHandler={onChangeStartValueInputHandler}
-                onSetClickHandler={onSetClickHandler}
-                settingMode={settingMode}
-                disableSetButtonOnSettingModeON={disableSetButtonOnSettingModeON}
-            />
-            <CounterBlock
-                settingMode={settingMode}
-                disableSetButtonOnSettingModeON={disableSetButtonOnSettingModeON}
-                messageForUser={messageForUser}
-                value={value}
-                maxValue={maxValue}
-                startValue={startValue}
-                onIncClickHandler={onIncClickHandler}
-                onResClickHandler={onResClickHandler}
-            />
+            {settingMode
+                ? <SetterBlock2
+                    maxValueInput={maxValueInput}
+                    startValueInput={startValueInput}
+                    messageForUser={messageForUser}
+                    errorMessage={errorMessage}
+                    onChangeMaxValueInputHandler={onChangeMaxValueInputHandler}
+                    onChangeStartValueInputHandler={onChangeStartValueInputHandler}
+                    onSetClickHandler={onSetClickHandler}
+                />
+                : <CounterBlock2
+                    value={value}
+                    maxValue={maxValue}
+                    onIncClickHandler={onIncClickHandler}
+                    onResClickHandler={onResClickHandler}
+                    onSettingModeClickHandler={onSettingModeClickHandler}
+                />
+            }
         </div>
     );
 }
